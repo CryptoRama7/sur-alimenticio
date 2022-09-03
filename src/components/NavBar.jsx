@@ -1,36 +1,34 @@
-import '../App.css'
-// import { AppBar } from "@material-ui/core";
-// import CartWidget from './CartWidget';
-// import { Wrapper, Logo, MenuItem, Left, Center, Right } from './StyledComponents';
-
-const Nav = () => {
-    return (
-    <header>
-        <nav>
-            <h1 class="titulo-nav">Sur Alimenticio</h1>
-            <a class="mision" href="">Mision</a>
-            <a class="sobre-nosotros" href="">Sobre Nosotros</a>
-            <a class="locales" href="">Locales</a>
-        </nav>
-    </header>
-        // <AppBar position="relative">
-        //     <Wrapper>
-        //         <Left>
-        //             <Logo></Logo>
-        //         </Left>
-        //         <Center>
-        //             <MenuItem>CATEGORIA 1</MenuItem>
-        //             <MenuItem>CATEGORIA 2</MenuItem>
-        //             <MenuItem>CATEGORIA 3</MenuItem>
-        //         </Center>
-        //         <Right>
-        //             <MenuItem>REGISTER</MenuItem>
-        //             <MenuItem>SING IN</MenuItem>
-        //             <MenuItem><CartWidget /></MenuItem>
-        //         </Right>
-        //     </Wrapper>
-        // </AppBar>
-    );
+import CartWidget from "./CartWidget";
+export default function NavBar() {
+  return (
+  <nav className="navbar navbar-expand-lg bg-light">
+    <div className="container-fluid">
+      <a className="navbar-brand" href="#">Sur Alimenticio</a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <a className="nav-link" aria-current="page" href="#">Mision</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">Sobre Nosotros</a>
+          </li>
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Locales
+            </a>
+            <ul className="dropdown-menu">
+              <li><a className="dropdown-item" href="#">Av. Pavón</a></li>
+              <li><a className="dropdown-item" href="#">Av. San Martin</a></li>
+            </ul>
+          </li>
+        </ul>
+        <CartWidget/>
+      </div>
+    </div>
+  </nav>
+);
 }
 
-export default Nav;

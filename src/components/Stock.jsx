@@ -1,9 +1,9 @@
 const Stock = (props) => {
     return (
-        <>
-            <h2>{props.name}</h2>
-            <p>{props.price}</p>
-        </>
+    <>
+        <h5 class="card-title">{props.name}</h5>
+        <p class="card-text">{props.price}</p>
+    </>
     );
 }
 

@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import Nav from './components/NavBar';
 import App from './App';
+import "bootstrap/dist/css/bootstrap.css";
+import * as bootstrap from 'bootstrap';
+import "./App.css"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <Nav />
     <App />
   </React.StrictMode>
 );  

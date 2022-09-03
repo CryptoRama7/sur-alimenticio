@@ -1,13 +1,10 @@
-import { Badge } from "@material-ui/core";
-import { ShoppingCartOutlined } from "@material-ui/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-const CartWidget = () => {
+export default function CartWidget () {
     return (
-        <Badge badgeContent={21} color="secondary">
-            <ShoppingCartOutlined />
-        </Badge>
+        <div>
+            <FontAwesomeIcon icon={ faCartArrowDown } />
+        </div>
     );
 }
-
-export default CartWidget;
-
