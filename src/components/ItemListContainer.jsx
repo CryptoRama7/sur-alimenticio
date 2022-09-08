@@ -1,9 +1,13 @@
 import { Wrapper } from "./StyledComponents";
 
+
 const ItemListContainer = ({greeting}) => {
+
     return (
-        <Wrapper>{greeting}</Wrapper>
+        <>
+            <Wrapper>{greeting}</Wrapper>
+        </>
     );
 }
 
-export default ItemListContainer
+export default ItemListContainer;
