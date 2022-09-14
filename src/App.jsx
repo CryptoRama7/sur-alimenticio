@@ -1,13 +1,13 @@
-import Productos from "./containers/Productos";
+import ItemDetailContainer from "./containers/ItemDetailContainer";
 import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
+import WelcomeText from "./components/ItemListContainer";
 
 const App = () => {
     return (
         <>
             <NavBar/>
-            <Productos />   
-            <ItemListContainer greeting="Tu dietetica de confianza"/>
+            <ItemDetailContainer />   
+            <WelcomeText greeting="Tu dietetica de confianza"/>
         </>
  );
 }

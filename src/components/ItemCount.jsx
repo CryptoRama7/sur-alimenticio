@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'; 
+import { useState } from 'react'; 
 
-const Stock = (props) => {
+const ItemCount = (props) => {
     const [cant, setCant] = useState(0);
-
+ 
     const suma = () => {
         setCant(cant+1);
     }
@@ -22,4 +22,4 @@ const Stock = (props) => {
     );
 }
 
-export default Stock;
+export default ItemCount;
