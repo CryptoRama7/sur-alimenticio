@@ -1,15 +1,19 @@
 import ItemDetailContainer from "./containers/ItemDetailContainer";
+import ItemListContainer from "./containers/ItemListContainer";
 import NavBar from "./components/NavBar";
-import WelcomeText from "./components/ItemListContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
     return (
-        <>
+        <BrowserRouter>
             <NavBar/>
-            <ItemDetailContainer />   
-            <WelcomeText greeting="Tu dietetica de confianza"/>
-        </>
- );
+            <Routes>
+                <Route path='/' element={<ItemListContainer/>} />
+                <Route path='/category/:idCategory' element={<ItemListContainer/>} />
+                <Route path='/item/:idItem' element={<ItemDetailContainer/>} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
-
-export default App; 
+    
+export default App;

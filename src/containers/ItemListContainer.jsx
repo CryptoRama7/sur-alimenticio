@@ -1,33 +1,29 @@
-import ItemCount from "../components/ItemCount";
-import { useEffect, useState } from 'react';
+import ItemList from '../components/ItemList';
 import customFetch from "../utils/customFetch";
-import dataFromBD from "../utils/dataFromBD";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { dataFromBD } from '../utils/dataFromBD';
 
 const ItemListContainer = () => {
-    
-    const [data, setData] = useState([]);
-     
-    useEffect(() => {
-        customFetch(2000, dataFromBD)
-        .then(datos => setData(dataFromBD))
-        .catch(err => console.log(err))
-    }, []);
+    const [datos, setDatos] = useState([]);
+    const { idCategory } = useParams();
 
-    const report = () => {
-       alert ("Has añadido productos al carrito");
+    useEffect(() => {
+        customFetch(1500, dataFromBD.filter(item => {
+            if (idCategory === undefined) return item;
+            return item.categoryId == idCategory;
+        }))
+            .then(result => setDatos(result))
+            .catch(err => console.log(err))
+    }, [idCategory]);
+
+    const onAdd = (qty) => {
+        alert("You have selected " + qty + " items.");
     }
 
-    return(
-        <>
-        {
-            data.map(item => (
-                <ItemCount
-                    key={item.id}
-                    name={item.title}
-                    price={item.price}
-                    report={report}/>
-            ))
-        }
+    return (
+        <>  
+            <ItemList items={datos} />
         </>
     );
 }

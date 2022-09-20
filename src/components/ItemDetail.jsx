@@ -1,22 +1,35 @@
 import ItemCount from "./ItemCount"
+import { DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price } from './styledComponents';
 
 const ItemDetail = ({ item }) => {
+    
+    const onAdd = (qyt) => {
+        alert("Has seleccionado" + qyt + " items");
+    }
+
     return(
         <>
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-        <img src={item.image} class="mani-image" alt="mani"/></div>
-    <div class="col-6">
-        <h2 class="card-title">{item.name}</h2>
-        <h5 class="card-price">{item.price}</h5>
-        <p class="card-description">{item.description}</p>
-        <p class="stock">Productos disponibles: {item.stock}</p>
-        <ItemCount className="compra" stock={item.stock}/></div>
-  </div>
-</div>
+        {
+            item && item.image
+            ?
+            <DetailContainer>
+                <WrapperDetail>
+                    <ImgContainer>
+                        <ImageDetail src={item.image[0]}/>
+                    </ImgContainer>
+                    <InfoContainer>
+                        <Title>{item.name}</Title>
+                        <Desc>{item.description}</Desc>
+                        <Price>$ {item.price}</Price>
+                        <Desc>{item.stock} unidades en stock</Desc>
+                    </InfoContainer>
+                    <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+                </WrapperDetail>
+            </DetailContainer>
+            : <p>Cargando...</p>
+        }
         </>
     );
-    }
+}
 
 export default ItemDetail;

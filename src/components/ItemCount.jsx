@@ -1,24 +1,42 @@
-import { useState } from 'react'; 
+import { useState, useEffect} from 'react'; 
+import { Button } from '@mui/material';
+import { Add, Remove } from '@mui/icons-material';
+import { ProductAmountContainer, ProductAmount } from './styledComponents';
 
-const ItemCount = (props) => {
-    const [cant, setCant] = useState(0);
+const ItemCount = ({ stock = 0, initial = -1, onAdd }) => {
+
+    const [count, setCount] = useState(0);
  
+    useEffect(() => {
+        setCount(initial);
+    }, []);
+
     const suma = () => {
-        setCant(cant+1);
+        if (count < stock) {
+            setCount(count + 1);
+        }
     }
 
     const resta = () => {
-        setCant(cant-1);
+
+        setCount(count-1)
+
+        if (count === 0) {
+            setCount(count);
+        }
     }
 
     return (
-        <>
-            <h5 class="card-title">{props.name}</h5>
-            <p class="card-text">{props.price}</p>
-            <button onClick={suma} type="button" class="btn btn-light">+</button> {cant}
-            <button onClick={resta} type="button" class="btn btn-light">-</button>
-            <button onClick={props.report} type="button" class="btn btn-light">Comprar</button>
-        </>
+        <ProductAmountContainer>
+            <Button variant="text" onClick={suma}><Add /></Button>
+            <ProductAmount>{count}</ProductAmount>
+            <Button variant="text" onClick={resta}><Remove /></Button>
+            {
+                stock
+                ? <Button variant="contained" color="primary" onClick={() => onAdd(count)}>Agregar al carrito</Button>
+                : <Button variant="contained" ></Button>
+            }
+        </ProductAmountContainer>
     );
 }
 

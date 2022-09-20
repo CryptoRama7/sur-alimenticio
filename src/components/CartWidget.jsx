@@ -1,12 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { Badge } from "@mui/material";
+import { ShoppingCartOutlined } from "@mui/icons-material";
 
-export default function CartWidget () {
+const CartWidget = () => {
     return (
-        <faCartArrowDown color="secondary">
+        <Badge color="secondary">
         <div>
-            <FontAwesomeIcon icon={ faCartArrowDown } />
+            <ShoppingCartOutlined />
         </div>
-        </faCartArrowDown>
+        </Badge>
     );
 }
+
+export default CartWidget
