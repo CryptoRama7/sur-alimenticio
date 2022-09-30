@@ -59,3 +59,27 @@ body{
 a{
   text-decoration: none;
 }
+
+.boton{
+  margin-left: 100px;
+}
+
+.noItems{
+  font-size: 25px;
+  color:aliceblue;
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+.goToS{
+  text-decoration: none;
+  font-size: 20px;
+  color:aliceblue;
+  padding-left: 15px;
+  text-decoration: underline;
+}
+
+.total{ 
+  font-size: 25px;
+  padding-left: 25px;
+}

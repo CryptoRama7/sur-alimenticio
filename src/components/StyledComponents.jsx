@@ -135,12 +135,16 @@ const DetailContainer = styled.div`
 `;
 
 const WrapperDetail = styled.div`
-    padding: 50px;
+    padding: 25px;
     display: flex;
 `;
 
 const ImgContainer = styled.div`
     flex: 1;
+`;
+
+const ImgContainerCart = styled.div`
+    flex: none;
 `;
 
 const ImageDetail = styled.img`
@@ -149,13 +153,28 @@ const ImageDetail = styled.img`
     object-fit: cover;
 `;
 
+const ImageDetailCart = styled.img`
+    width: 140px;
+    height: 150px;
+    object-fit: cover;
+`;
+
 const InfoContainer = styled.div`
     flex: 1;
     padding: 0px 50px;
 `;
 
+const InfoContainerCart = styled.div`
+    flex: 1;
+    padding: 5px 50px;
+`;
+
 const Title = styled.h1`
     font-weight: 200;
+`;
+
+const TitleCart = styled.h1`
+    font-weight: 100;
 `;
 
 const Desc = styled.p`
@@ -163,8 +182,15 @@ const Desc = styled.p`
 `;
 
 const Price  = styled.span`
-    font-weight: 100;
+    font-weight: 40;
     font-size: 40px;
+`;
+
+const PriceCart  = styled.span`
+    font-weight: 40;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
 `;
 
 export { 
@@ -172,5 +198,6 @@ export {
     ProductAmountContainer, ProductAmount, 
     ProductsContainer, ProductContainer,
     Circle, Image, Info, Icon,
-    DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price
+    DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price,
+    ImageDetailCart, InfoContainerCart, PriceCart, TitleCart, ImgContainerCart
 };

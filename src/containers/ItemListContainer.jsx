@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const { idCategory } = useParams();
 
     useEffect(() => {
-        customFetch(1500, dataFromBD.filter(item => {
+        customFetch(500, dataFromBD.filter(item => {
             if (idCategory === undefined) return item;
             return item.categoryId == idCategory;
         }))

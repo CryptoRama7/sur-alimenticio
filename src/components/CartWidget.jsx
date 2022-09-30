@@ -1,14 +1,15 @@
 import { Badge } from "@mui/material";
 import { ShoppingCartOutlined } from "@mui/icons-material";
+import { useCartContext } from "../context/CartContext";
 
-const CartWidget = () => {
+const CartWidget = () => {  
+const { totalProducts } = useCartContext();
     return (
-        <Badge color="secondary">
-        <div>
+         <Badge color="secondary" >
             <ShoppingCartOutlined />
-        </div>
+            <span>{totalProducts() || ''}</span>
         </Badge>
     );
 }
 
-export default CartWidget
+export default CartWidget;

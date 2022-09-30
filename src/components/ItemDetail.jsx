@@ -2,16 +2,16 @@ import ItemCount from "./ItemCount"
 import { DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price } from './styledComponents';
 import { useState } from "react";
 import { useContext } from "react";
-import { CartContext } from "./CartContext";    
+import { useCartContext } from "../context/CartContext";    
 
 const ItemDetail = ({ item }) => {
     const [itemCount, setItemCount] = useState(0);
-    const context = useContext(CartContext);
+    const {addItem} = useCartContext();
 
     const onAdd = (qyt) => {
         alert("Has seleccionado" + " " + qyt + " items");
         setItemCount(qyt);
-        context.addItem(item, qyt);
+        addItem(item, qyt);
     }
 
     return(
