@@ -33,7 +33,7 @@ const ItemDetail = ({ item }) => {
                     <ItemCount stock={item.stock} initial={0} onAdd={onAdd} />
                 </WrapperDetail>
             </DetailContainer>
-            : <p>Cargando...</p>
+            : <p>Loading...</p>
         }
         </>
     );

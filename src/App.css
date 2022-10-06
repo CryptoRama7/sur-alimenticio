@@ -80,6 +80,14 @@ a{
 }
 
 .total{ 
-  font-size: 25px;
+  font-size: 40px;
   padding-left: 25px;
+}
+
+.imGBlg{
+  align-items: center;
+}
+
+.MuiTouchRipple-root{
+  padding-left: 100px;
 }

@@ -2,8 +2,9 @@ import ItemDetailContainer from "./containers/ItemDetailContainer";
 import ItemListContainer from "./containers/ItemListContainer";
 import NavBar from "./components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Cart from "./components/Cart"
-import CartProvider from "./context/CartContext"
+import Cart from "./components/Cart";
+import CartProvider from "./context/CartContext";
+import FirestoreFetchOne from "./utils/firestoreFetch";
 
 const App = () => {
     return (
@@ -13,7 +14,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<ItemListContainer/>} />
                 <Route path='/category/:idCategory' element={<ItemListContainer/>} />
-                <Route path='/item/:idItem' element={<ItemDetailContainer/>} />
+                <Route path='/item/:idItem' element={<FirestoreFetchOne/>} />
                 <Route path='/cart' element={<Cart/>}/>
             </Routes>
             </CartProvider>
